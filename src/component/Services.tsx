@@ -3,7 +3,6 @@ import React, { useRef } from "react";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { motion, useInView } from "framer-motion";
 
-
 export function AnimatedPinDemo() {
   const data = [
     {
@@ -17,13 +16,13 @@ export function AnimatedPinDemo() {
         "React Native is an ideal choice for developers looking to create high-quality, cross-platform mobile apps with a native look and feel. Its powerful combination of JavaScript, React, and native modules makes it a go-to framework for businesses aiming to build efficient, scalable, and cost-effective mobile applications.",
     },
   ];
-  const progressData = [
-    { title: "Html", progress: 90, color: "#ec7518" },
-    { title: "Css", progress: 90 , color:"#18b2ec"},
-    { title: "JavaScript", progress: 90, color:"#f0dc55" },
-    { title: "React JS", progress: 90 , color: '#83e6ff'},
-    { title: "Next JS", progress: 80 , color : "#173e6a"},
-  ];
+  // const progressData = [
+  //   { title: "Html", progress: 90, color: "#ec7518" },
+  //   { title: "Css", progress: 90, color: "#18b2ec" },
+  //   { title: "JavaScript", progress: 90, color: "#f0dc55" },
+  //   { title: "React JS", progress: 90, color: "#83e6ff" },
+  //   { title: "Next JS", progress: 80, color: "#173e6a" },
+  // ];
   return (
     <div className="flex flex-col items-center justify-center mt-8">
       <h1
@@ -47,30 +46,29 @@ export function AnimatedPinDemo() {
           </PinContainer>
         ))}
       </div>
-      
-      <div className="flex flex-col items-center justify-center -mt-[2rem]">
-      {progressData.map((item, index) => {
-        const ref = useRef(null);
-        const isInView = useInView(ref, { triggerOnce: true });
-
-        return (
-          <div key={index} className="w-[70vh] mb-4" ref={ref}>
-            <div className="mb-1 text-base font-medium dark:text-white">
-              {item.title}
-            </div>
-            <div className="bg-white rounded-full h-2.5 dark:bg-gray-700">
-              <motion.div
-                className="h-2.5 rounded-full"
-                style={{ backgroundColor: item.color }}
-                initial={{ width: "0%" }}
-                animate={{ width: isInView ? `${item.progress}%` : "0%" }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-              />
-            </div>
-          </div>
-        );
-      })}
+<aside className="bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
+  <div className="flex justify-between items-center">
+    <div className="flex space-x-2 text-red-500">
+      <div className="w-3 h-3 rounded-full bg-red-500"></div>
+      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+      <div className="w-3 h-3 rounded-full bg-green-500"></div>
     </div>
+    <p className="text-sm">Bash</p>
+  </div>
+  <div className="mt-4">
+    <p className="text-green-400">{`const developer = {`}</p>
+    <p className="text-white">FirstName: <span className="text-green-400">"Saim",</span> </p>
+    <p className="text-white">LastName: <span className="text-green-400">"Ramzan",</span> </p>
+    <p className="text-white">age: <span className="text-green-400">19,</span> </p>
+    <p className="text-white">{`Hobby:repeat = () => `} </p>
+    <p className="text-gray-400 -mt-5 ml-3"><br/> {`//Eat()`},<br/> {`//Sleep()`},<br/> {`//code()`}, <br/> {`}`},</p> 
+    <p className="text-white"><span className="text-green-400">{`}`},</span> </p>
+    {/* <p className="text-white">added 1 package, and audited 2 packages in 3s</p>
+    <p className="text-green-400">$</p> */}
+  </div>
+</aside>
+
+      
     </div>
   );
 }

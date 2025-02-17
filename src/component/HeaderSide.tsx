@@ -53,31 +53,27 @@ function HeaderSide() {
   }, [index, typing]);
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center ">
-      <div className="flex flex-col w-full md:w-[70%]">
+    <div className="flex flex-col md:flex-row items-center justify-between p-4 md:p-8 lg:p-12">
+      <div className="flex flex-col w-full md:w-[60%] space-y-4">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-2xl md:text-4xl break-words flex flex-wrap"
+          className="text-2xl md:text-4xl break-words flex flex-wrap text-center md:text-left"
         >
-          Hello, I'm,{" "}
-          <span className="text-blue-500 dark:text-blue-500">
-            Saim Ramzan&nbsp;
-          </span>{" "}
-          a Frontend Developer Expert in{" "}
-          <span className="text-blue-500 dark:text-blue-500 font-bold ">
-            &nbsp;{currentExpertise}
-          </span>
+          Hello, I'm,
+          <span className="text-blue-500 dark:text-blue-500"> Saim Ramzan&nbsp;</span>
+          a Frontend Developer Expert in
+          <span className="text-blue-500 dark:text-blue-500 font-bold "> &nbsp;{currentExpertise}</span>
         </motion.div>
         <InfiniteMovingCards items={links} direction="right" speed="slow" />
       </div>
-      <div className="pt-4 md:pt-0 w-full md:w-[30%] text-center">
+      <div className="pt-4 md:pt-0 w-full md:w-[40%] text-center">
         <Image
           src={saimImage}
           width={300}
           height={300}
-          objectFit="comtain"
+          objectFit="contain"
           alt="Saim - Picture of the author"
           priority
           className="rounded-lg shadow-lg mx-auto"
