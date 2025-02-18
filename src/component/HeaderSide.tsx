@@ -54,12 +54,12 @@ function HeaderSide() {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between p-4 md:p-8 lg:p-12">
-      <div className="flex flex-col w-full md:w-[60%] space-y-4">
+      <div className="flex flex-col w-[95%] md:w-[60%] space-y-4">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-2xl md:text-4xl break-words flex flex-wrap text-center md:text-left"
+          className="text-xl md:text-4xl break-words flex flex-wrap text-center md:text-left "
         >
           Hello, I'm,
           <span className="text-blue-500 dark:text-blue-500"> Saim Ramzan&nbsp;</span>

@@ -14,7 +14,7 @@ export default function Home() {
      {/* <LampDemo /> */}
      <Stats />
      <AnimatedPinDemo />
-     <MySkills />
+     {/* <MySkills /> */}
      <Form />
     </>
   );

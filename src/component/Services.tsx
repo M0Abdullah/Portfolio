@@ -24,14 +24,14 @@ export function AnimatedPinDemo() {
   //   { title: "Next JS", progress: 80, color: "#173e6a" },
   // ];
   return (
-    <div className="flex flex-col items-center justify-center mt-8">
+    <div className="items-center">
       <h1
         style={{ marginBottom: "-8rem" }}
         className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
         Services
       </h1>
-      <div className="h-[40rem] w-full flex items-center justify-center ">
+      <div className="w-full h-[60rem] md:h-[40rem] gap-10 flex flex-col md:flex-row items-center justify-center ">
         {data.map((item) => (
           <PinContainer title={item.title}>
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
@@ -46,29 +46,41 @@ export function AnimatedPinDemo() {
           </PinContainer>
         ))}
       </div>
-<aside className="bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono">
-  <div className="flex justify-between items-center">
-    <div className="flex space-x-2 text-red-500">
-      <div className="w-3 h-3 rounded-full bg-red-500"></div>
-      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-      <div className="w-3 h-3 rounded-full bg-green-500"></div>
-    </div>
-    <p className="text-sm">Bash</p>
-  </div>
-  <div className="mt-4">
-    <p className="text-green-400">{`const developer = {`}</p>
-    <p className="text-white">FirstName: <span className="text-green-400">"Saim",</span> </p>
-    <p className="text-white">LastName: <span className="text-green-400">"Ramzan",</span> </p>
-    <p className="text-white">age: <span className="text-green-400">19,</span> </p>
-    <p className="text-white">{`Hobby:repeat = () => `} </p>
-    <p className="text-gray-400 -mt-5 ml-3"><br/> {`//Eat()`},<br/> {`//Sleep()`},<br/> {`//code()`}, <br/> {`}`},</p> 
-    <p className="text-white"><span className="text-green-400">{`}`},</span> </p>
-    {/* <p className="text-white">added 1 package, and audited 2 packages in 3s</p>
-    <p className="text-green-400">$</p> */}
-  </div>
-</aside>
+      <div className="flex justify-center items-center">
 
-      
+
+        <div className="bg-black text-white p-6 m-2  rounded-lg w-full max-w-lg font-mono">
+          <div className="flex justify-between items-center">
+            <div className="flex space-x-2 text-red-500">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <p className="text-sm">Bash</p>
+          </div>
+          <div className="mt-4">
+            <p className="text-green-400">{`const developer = {`}</p>
+            <p className="text-white">
+              FirstName: <span className="text-green-400">"Saim",</span>{" "}
+            </p>
+            <p className="text-white">
+              LastName: <span className="text-green-400">"Ramzan",</span>{" "}
+            </p>
+            <p className="text-white">
+              age: <span className="text-green-400">19,</span>{" "}
+            </p>
+            <p className="text-white">{`Hobby:repeat = () => `} </p>
+            <p className="text-gray-400 -mt-5 ml-3">
+              <br /> {`//Eat()`},<br /> {`//Sleep()`},<br /> {`//code()`},{" "}
+              <br /> {`}`},
+            </p>
+            <p className="text-white">
+              <span className="text-green-400">{`}`},</span>{" "}
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
