@@ -53,7 +53,7 @@ function HeaderSide() {
   }, [index, typing]);
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between p-4 md:p-8 lg:p-12">
+    <div className="flex flex-col-reverse md:flex-row items-center justify-between p-4 md:p-8 lg:p-12">
       <div className="flex flex-col w-[95%] md:w-[60%] space-y-4">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
