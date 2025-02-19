@@ -25,6 +25,7 @@ export const InfiniteMovingCards = ({
 
   useEffect(() => {
     addAnimation();
+  // eslint-disable-next-line
   }, []);
   const [start, setStart] = useState(false);
   function addAnimation() {
@@ -85,7 +86,7 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
             className="w-[200px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-3 pb-6 md:w-[200px]"
             style={{

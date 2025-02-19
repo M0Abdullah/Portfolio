@@ -1,6 +1,5 @@
 import React from "react";
 import { MacbookScroll } from "../components/ui/macbook-scroll";
-import Link from "next/link";
 
 export function MacbookScrollDemo() {
   return (
@@ -11,19 +10,13 @@ export function MacbookScrollDemo() {
            Here the web view of my portfolio.
           </span>
         }
-        // badge={
-        //   <Link href="https://peerlist.io/manuarora">
-        //     <Badge className="h-10 w-10 transform -rotate-12" />
-        //   </Link>
-        // }
-        // src={`/linear.webp`}
         showGradient={false}
       />
     </div>
   );
 }
 // Peerlist logo
-const Badge = ({ className }: { className?: string }) => {
+export const Badge = ({ className }: { className?: string }) => {
   return (
     <svg
       width="24"

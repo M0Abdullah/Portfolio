@@ -17,8 +17,11 @@ export const MaskContainer = ({
   className?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  // eslint-disable-next-line
   const [mousePosition, setMousePosition] = useState<any>({ x: null, y: null });
+  // eslint-disable-next-line
   const containerRef = useRef<any>(null);
+  // eslint-disable-next-line
   const updateMousePosition = (e: any) => {
     const rect = containerRef.current.getBoundingClientRect();
     setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -28,6 +31,7 @@ export const MaskContainer = ({
     containerRef.current.addEventListener("mousemove", updateMousePosition);
     return () => {
       if (containerRef.current) {
+        // eslint-disable-next-line
         containerRef.current.removeEventListener(
           "mousemove",
           updateMousePosition
@@ -35,6 +39,7 @@ export const MaskContainer = ({
       }
     };
   }, []);
+  // eslint-disable-next-line
   let maskSize = isHovered ? revealSize : size;
 
   return (

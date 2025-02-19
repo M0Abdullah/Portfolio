@@ -1,4 +1,5 @@
-import { LampDemo } from "@/component/AboutUs";
+// import { LampDemo } from "@/component/AboutUs";
+import { AboutUs } from "@/component/AboutUs";
 import Form from "@/component/Form";
 import HeaderSide from "@/component/HeaderSide";
 import MySkills from "@/component/MySkills";
@@ -11,10 +12,10 @@ export default function Home() {
     <div className="max-w-screen-xl mx-auto p-4">
     <HeaderSide />
   </div>
-     {/* <LampDemo /> */}
+     <AboutUs />
      <Stats />
+     <MySkills />
      <AnimatedPinDemo />
-     {/* <MySkills /> */}
      <Form />
     </>
   );

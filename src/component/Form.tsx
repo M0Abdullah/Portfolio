@@ -13,7 +13,7 @@ const initialInputs = {
 }
 const {values, handleChange, handleSubmit} = useFormik({
   initialValues: initialInputs,
-  onSubmit:(value, event) => {
+  onSubmit:(value) => {
     const url =
       "https://wa.me/923437105313?text=" +
       "Name: " + encodeURIComponent(value.name) + "%0a" +

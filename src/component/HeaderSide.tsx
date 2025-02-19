@@ -7,20 +7,20 @@ import { useState, useEffect } from "react";
 
 function HeaderSide() {
   const links = [
-    { title: "Html" },
-    { title: "Css" },
-    { title: "JavaScript" },
-    { title: "React-JS" },
-    { title: "Next-JS" },
-    { title: "Tailwind Css" },
-    { title: "Sass" },
-    { title: "Firebase" },
-    { title: "storybook" },
-    { title: "Ten Stack Query" },
-    { title: "MobX" },
-    { title: "Redux" },
-    { title: "Redux Toolkit" },
-    { title: "Redux Saga" },
+    { id: 1, title: "Html", },
+    { id: 2, title: "Css", },
+    { id: 3, title: "JavaScript",  },
+    { id: 4, title: "React-JS",  },
+    { id: 5, title: "Next-JS",  },
+    { id: 6, title: "Tailwind Css",  },
+    { id: 7, title: "Sass",},
+    { id: 8, title: "Firebase",  },
+    { id: 9, title: "Storybook", },
+    { id: 10, title: "TanStack Query",  },
+    { id: 11, title: "MobX",  },
+    { id: 12, title: "Redux", },
+    { id: 13, title: "Redux Toolkit",  },
+    { id: 14, title: "Redux Saga",  },
   ];
 
   const expertiseList = ["JavaScript", "React JS", "Next JS", "React Native"];
@@ -45,8 +45,7 @@ function HeaderSide() {
       const typingEffect = setInterval(() => {
         setCurrentExpertise(expertiseList[index].slice(0, charIndex + 1));
         charIndex++;
-        if (charIndex === expertiseList[index].length)
-          clearInterval(typingEffect);
+        if (charIndex === expertiseList[index].length) clearInterval(typingEffect);
       }, 100);
       return () => clearInterval(typingEffect);
     }
@@ -59,15 +58,18 @@ function HeaderSide() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-xl md:text-4xl break-words flex flex-wrap text-center md:text-left "
+          className="text-xl md:text-4xl break-words flex flex-wrap text-center md:text-left"
         >
-          Hello, I'm,
+          {"Hello, I'm,"}
           <span className="text-blue-500 dark:text-blue-500"> Saim Ramzan&nbsp;</span>
           a Frontend Developer Expert in
-          <span className="text-blue-500 dark:text-blue-500 font-bold "> &nbsp;{currentExpertise}</span>
+          <span className="text-blue-500 dark:text-blue-500 font-bold"> &nbsp;{currentExpertise}</span>
         </motion.div>
-        <InfiniteMovingCards items={links} direction="right" speed="slow" />
+        
+        {/* Ensure unique keys */}
+        <InfiniteMovingCards items={links.map((link) => ({ ...link, id: `${link.id}-${link.title}` }))} direction="right" speed="slow" />
       </div>
+
       <div className="pt-4 md:pt-0 w-full md:w-[40%] text-center">
         <Image
           src={saimImage}
