@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0a0a0a; /* Dark background */
+  --foreground: #ededed; /* Light text */
 }
 
 body {
@@ -20,6 +13,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 5px;
   height: 2px;
@@ -27,12 +21,12 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+  background: #1a1a1a; /* Dark track */
   border-radius: 10px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background:#e1e3e4; 
+  background: #525252; /* Darker handle */
   border-radius: 10px;
 }

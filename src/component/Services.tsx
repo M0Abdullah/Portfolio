@@ -17,24 +17,24 @@ export function AnimatedPinDemo() {
   ];
   /* eslint-disable */
   return (
-    <div className="items-center">
+    <div className="items-center ">
       <h1
         style={{ marginBottom: "-8rem" }}
         className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
         Services
       </h1>
-      <div className="w-full h-[60rem] md:h-[40rem] md:mt-10 gap-10 flex flex-col md:flex-row items-center justify-center ">
+      <div className="w-full h-[60rem] sm:m-4 md:h-[40rem] md:mt-10 gap-10 flex flex-col md:flex-row items-center justify-center ">
         {data.map((item, id) => (
           <BackgroundGradient
             key={id}
-            className="rounded-[22px] md:h-96 max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900"
+            className="rounded-[22px] md:h-96 max-w-sm p-4  sm:p-10 bg-zinc-900"
           >
-            <h1 className="text-lg md:text-2xl sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+            <h1 className="text-lg md:text-2xl sm:text-xl mt-4 mb-2 text-neutral-200">
               {item.title}
             </h1>
 
-            <h3 className="text-lg text-neutral-600 dark:text-neutral-400">
+            <h3 className="text-lg  text-neutral-400">
               {item.description}
             </h3>
           </BackgroundGradient>
