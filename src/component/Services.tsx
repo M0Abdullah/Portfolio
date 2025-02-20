@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { PinContainer } from "@/components/ui/3d-pin";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
 
 export function AnimatedPinDemo() {
   const data = [
@@ -15,7 +15,7 @@ export function AnimatedPinDemo() {
         "React Native is an ideal choice for developers looking to create high-quality, cross-platform mobile apps with a native look and feel. Its powerful combination of JavaScript, React, and native modules makes it a go-to framework for businesses aiming to build efficient, scalable, and cost-effective mobile applications.",
     },
   ];
-/* eslint-disable */
+  /* eslint-disable */
   return (
     <div className="items-center">
       <h1
@@ -24,25 +24,23 @@ export function AnimatedPinDemo() {
       >
         Services
       </h1>
-      <div className="w-full h-[60rem] md:h-[40rem] gap-10 flex flex-col md:flex-row items-center justify-center ">
+      <div className="w-full h-[60rem] md:h-[40rem] md:mt-10 gap-10 flex flex-col md:flex-row items-center justify-center ">
         {data.map((item, id) => (
-          console.log(id),
-          <PinContainer key={id} title={item.title}>
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
-              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-                {item.title}
-              </h3>
-              <div className="text-base !m-0 !p-0 font-normal">
-                <span className="text-slate-500 ">{item.description}</span>
-              </div>
-              <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
-            </div>
-          </PinContainer>
+          <BackgroundGradient
+            key={id}
+            className="rounded-[22px] md:h-96 max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900"
+          >
+            <h1 className="text-lg md:text-2xl sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+              {item.title}
+            </h1>
+
+            <h3 className="text-lg text-neutral-600 dark:text-neutral-400">
+              {item.description}
+            </h3>
+          </BackgroundGradient>
         ))}
       </div>
       <div className="flex justify-center items-center">
-
-
         <div className="bg-black text-white p-6 m-2  rounded-lg w-full max-w-lg font-mono">
           <div className="flex justify-between items-center">
             <div className="flex space-x-2 text-red-500">
@@ -55,7 +53,6 @@ export function AnimatedPinDemo() {
           <div className="mt-4">
             <p className="text-green-400">{`const developer = {`}</p>
             <p className="text-white">
-            
               FirstName: <span className="text-green-400">"Saim",</span>{" "}
             </p>
             <p className="text-white">
@@ -75,9 +72,7 @@ export function AnimatedPinDemo() {
           </div>
         </div>
       </div>
-
     </div>
   );
   /* eslint-enable */
-
 }

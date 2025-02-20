@@ -12,13 +12,14 @@ function MySkills() {
     { title: "React JS", progress: 90, color: "#83e6ff" },
     { title: "Next JS", progress: 80, color: "#173e6a" },
   ];
+/* eslint-disable */
 
   return (
     <div className="flex flex-col items-center justify-center px-4 md:px-8">
       <h1 className="bg-gradient-to-br mb-6 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
         Skills
       </h1>
-      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 w-full max-w-4xl">
+      <div className="flex flex-col md:flex-row items-center gap-11 md:gap-10 w-full max-w-4xl">
         <Image src={setting} width={300} height={300} alt="setting" />
         <div className="flex flex-col w-full">
           {progressData.map((item, index) => {
@@ -45,6 +46,8 @@ function MySkills() {
       </div>
     </div>
   );
+  /* eslint-enable */
+
 }
 
 export default MySkills;

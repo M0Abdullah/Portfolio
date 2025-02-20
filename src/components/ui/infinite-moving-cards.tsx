@@ -11,8 +11,6 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string;
-    name: string;
     title: string;
   }[];
   direction?: "left" | "right";
@@ -86,14 +84,15 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item) => (
+        {items.map((item,id) => (
           <li
+          key={id}
             className="w-[200px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-3 pb-6 md:w-[200px]"
             style={{
               background:
                 "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
             }}
-            key={item.name}
+            // key={item.name}
           >
             <blockquote>
               <div
@@ -101,12 +100,12 @@ export const InfiniteMovingCards = ({
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
               <span className=" relative z-20 text-sm text-center leading-[1.6] text-gray-100 font-normal">
-                {item.quote}
+                {/* {item.quote} */}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center justify-center">
                 <span className="flex flex-col gap-1">
                   <span className=" text-sm leading-[1.6] text-gray-400 font-normal">
-                    {item.name}
+                    {/* {item.name} */}
                   </span>
                   <span className=" leading-[1.6] text-center text-xl font-bold text-gray-400 ">
                     {item.title}

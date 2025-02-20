@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 function HeaderSide() {
   const links = [
-    { id: 1, title: "Html", },
+    { id: 1, title: "Html",},
     { id: 2, title: "Css", },
     { id: 3, title: "JavaScript",  },
     { id: 4, title: "React-JS",  },
@@ -37,6 +37,7 @@ function HeaderSide() {
       }, 500);
     }, 2000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -49,11 +50,12 @@ function HeaderSide() {
       }, 100);
       return () => clearInterval(typingEffect);
     }
+    // eslint-disable-next-line
   }, [index, typing]);
 
   return (
     <div className="flex flex-col-reverse md:flex-row items-center justify-between p-4 md:p-8 lg:p-12">
-      <div className="flex flex-col w-[95%] md:w-[60%] space-y-4">
+      <div className="flex flex-col w-[95%] md:w-[70%] space-y-4">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,10 +69,10 @@ function HeaderSide() {
         </motion.div>
         
         {/* Ensure unique keys */}
-        <InfiniteMovingCards items={links.map((link) => ({ ...link, id: `${link.id}-${link.title}` }))} direction="right" speed="slow" />
+        <InfiniteMovingCards  items={links} direction="right" speed="slow" />
       </div>
 
-      <div className="pt-4 md:pt-0 w-full md:w-[40%] text-center">
+      <div className="pt-4 md:pt-0 w-full md:w-[40%] text-center ">
         <Image
           src={saimImage}
           width={300}

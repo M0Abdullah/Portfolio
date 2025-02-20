@@ -22,13 +22,11 @@ const {values, handleChange, handleSubmit} = useFormik({
       "Company: " + encodeURIComponent(value.company) + "%0a" +
       "Message: " + encodeURIComponent(value.message);
 
-    console.log("values -------->", value);
-
-    // Open WhatsApp chat
     window.open(url, "_blank");
   }
   
 })
+
   return (
     <div className="flex justify-center flex-col ">
       <h2 className="bg-gradient-to-br mb-3 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
@@ -48,7 +46,7 @@ const {values, handleChange, handleSubmit} = useFormik({
             />
             <input
               type="email"
-              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%] "
+              className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150 w-full md:w-[48%]"
               placeholder="Email"
               name="email"
               value={values.email}
@@ -79,10 +77,11 @@ const {values, handleChange, handleSubmit} = useFormik({
             ></textarea>
 
             <button
+              disabled={values.company === "" || values.name === "" || values.email === "" || values.phone === "" || values.message === ""}
               type="submit"
-              className="bg-gradient-to-r  from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+              className="disabled:opacity-50 bg-gradient-to-r  from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
             >
-              Submit
+              Send Request
             </button>
           </form>
         </div>
