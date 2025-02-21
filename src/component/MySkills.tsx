@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import setting from "@/Assest/settings.svg";
+import analysis from "@/Assest/analysis.svg";
 import Image from "next/image";
 
 function MySkills() {
@@ -10,17 +10,19 @@ function MySkills() {
     { title: "Css", progress: 90, color: "#18b2ec" },
     { title: "JavaScript", progress: 90, color: "#f0dc55" },
     { title: "React JS", progress: 90, color: "#83e6ff" },
-    { title: "Next JS", progress: 80, color: "#173e6a" },
+    { title: "Next JS", progress: 80, color: "#2974c9" },
   ];
 /* eslint-disable */
 
   return (
-    <div className="flex flex-col items-center justify-center px-4 md:px-8">
-      <h1 className="bg-gradient-to-br mb-6 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
-        Skills
-      </h1>
+    <div className="flex flex-col items-center justify-center px-4 py-4 md:px-8">
+      <h1 className="bg-gradient-to-br mb-0 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
+      Skills
+        </h1>
+        <hr  className="w-[3%] mx-auto my-0  border-2 border-blue-500"/>
+     
       <div className="flex flex-col md:flex-row items-center gap-11 md:gap-10 w-full max-w-4xl">
-        <Image src={setting} width={300} height={300} alt="setting" />
+        <Image src={analysis} width={300} height={300} alt="analysis" />
         <div className="flex flex-col w-full">
           {progressData.map((item, index) => {
             const ref = useRef(null);

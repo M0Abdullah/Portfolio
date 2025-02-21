@@ -17,13 +17,11 @@ export function AnimatedPinDemo() {
   ];
   /* eslint-disable */
   return (
-    <div className="items-center ">
-      <h1
-        style={{ marginBottom: "-8rem" }}
-        className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
-      >
-        Services
-      </h1>
+    <div className="items-center py-4 ">
+      <h1 className="bg-gradient-to-br mb-0 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
+      Services
+        </h1>
+        <hr  className="w-[5%] mx-auto my-0 sm:mb-3 border-2 border-blue-500"/>
       <div className="w-full h-[60rem] sm:m-4 md:h-[40rem] md:mt-10 gap-10 flex flex-col md:flex-row items-center justify-center ">
         {data.map((item, id) => (
           <BackgroundGradient

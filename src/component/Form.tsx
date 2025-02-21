@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import React from "react";
-import direction from "@/Assest/direction.svg";
+import message from "@/Assest/message.svg";
 import { useFormik } from "formik";
 function Form() {
 const initialInputs = {
@@ -28,12 +28,15 @@ const {values, handleChange, handleSubmit} = useFormik({
 })
 
   return (
-    <div className="flex justify-center flex-col ">
-      <h2 className="bg-gradient-to-br mb-3 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
-        Contact Us
-      </h2>
+    <div className="flex justify-center flex-col gap-3">
+      <div>
+      <h1 className="bg-gradient-to-br mb-0 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
+      Contact Us
+        </h1>
+        <hr  className="w-[6%] mx-auto my-0  md:mb-3 border-2 border-blue-500"/>
+      </div>
       <div className="flex  items-center flex-col  md:flex-row justify-center px-4 dark">
-        <Image src={direction} className=" h-[200px] w-[200px] md:w-[300px] md:h-[300px]" width={300} height={300} alt="direction" />
+        <Image src={message} className=" h-[200px] w-[200px] md:w-[300px] md:h-[300px]" width={300} height={300} alt="message" />
         <div className="w-full max-w-md  rounded-lg shadow-md p-6">
           <form onSubmit={handleSubmit} className="grid grid-cols-1  md:flex md:flex-wrap gap-2 justify-center">
             <input
