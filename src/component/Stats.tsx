@@ -9,7 +9,7 @@ const Stats = () => {
   ];
 
   return (
-    <div className="bg-gray-900 text-white p-10  flex justify-center gap-10">
+    <div className="bg-gray-900 text-white p-10  flex  w-full justify-center gap-10">
       {stats.map((stat, index) => (
         <div key={index} className="text-center">
           <h2 className="text-4xl font-bold">

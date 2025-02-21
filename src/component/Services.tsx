@@ -22,7 +22,7 @@ export function AnimatedPinDemo() {
       Services
         </h1>
         <hr  className="w-[5%] mx-auto my-0 sm:mb-3 border-2 border-blue-500"/>
-      <div className="w-full h-[60rem] sm:m-4 md:h-[40rem] md:mt-10 gap-10 flex flex-col md:flex-row items-center justify-center ">
+      <div className="w-full h-[60rem] sm:mt-4 md:h-[40rem] md:mt-10 gap-10 flex flex-col md:flex-row items-center justify-center ">
         {data.map((item, id) => (
           <BackgroundGradient
             key={id}
