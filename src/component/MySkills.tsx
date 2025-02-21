@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import analysis from "@/Assest/analysis.svg";
 import Image from "next/image";
+import AnimatedContent from "@/components/AnimationContent";
 
 function MySkills() {
   const progressData = [
@@ -15,6 +16,7 @@ function MySkills() {
 /* eslint-disable */
 
   return (
+      <AnimatedContent >
     <div className="flex flex-col items-center justify-center px-4 py-4 md:px-8">
       <h1 className="bg-gradient-to-br mb-0 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
       Skills
@@ -47,6 +49,8 @@ function MySkills() {
         </div>
       </div>
     </div>
+    </AnimatedContent>
+
   );
   /* eslint-enable */
 

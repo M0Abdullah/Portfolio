@@ -4,6 +4,7 @@ import saimImage from "../Assest/saim.png";
 import Image from "next/image";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { useState, useEffect } from "react";
+import AnimatedContent from "@/components/AnimationContent";
 
 function HeaderSide() {
   const links = [
@@ -54,6 +55,7 @@ function HeaderSide() {
   }, [index, typing]);
 
   return (
+    <AnimatedContent direction="vertical">
     <div className="flex flex-col-reverse md:flex-row items-center justify-between p-4 md:p-8 lg:p-12">
       <div className="flex flex-col w-[95%] md:w-[70%] space-y-4">
         <motion.div
@@ -84,6 +86,8 @@ function HeaderSide() {
         />
       </div>
     </div>
+    </AnimatedContent>
+
   );
 }
 

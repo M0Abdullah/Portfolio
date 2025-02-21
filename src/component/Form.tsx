@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import message from "@/Assest/message.svg";
 import { useFormik } from "formik";
+import AnimatedContent from "@/components/AnimationContent";
 function Form() {
 const initialInputs = {
   name: "",
@@ -28,6 +29,8 @@ const {values, handleChange, handleSubmit} = useFormik({
 })
 
   return (
+    <AnimatedContent direction="horizontal">
+
     <div className="flex justify-center flex-col gap-3">
       <div>
       <h1 className="bg-gradient-to-br mb-0 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
@@ -90,6 +93,7 @@ const {values, handleChange, handleSubmit} = useFormik({
         </div>
       </div>
     </div>
+    </AnimatedContent>
   );
 }
 

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
+import AnimatedContent from "@/components/AnimationContent";
 
 export function AnimatedPinDemo() {
   const data = [
@@ -17,7 +18,9 @@ export function AnimatedPinDemo() {
   ];
   /* eslint-disable */
   return (
+    
     <div className="items-center py-4 ">
+      <AnimatedContent direction="horizontal">
       <h1 className="bg-gradient-to-br mb-0 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
       Services
         </h1>
@@ -38,6 +41,8 @@ export function AnimatedPinDemo() {
           </BackgroundGradient>
         ))}
       </div>
+    </AnimatedContent>
+    <AnimatedContent direction="vertical">
       <div className="flex justify-center items-center">
         <div className="bg-black text-white p-6 m-2  rounded-lg w-full max-w-lg font-mono">
           <div className="flex justify-between items-center">
@@ -70,7 +75,9 @@ export function AnimatedPinDemo() {
           </div>
         </div>
       </div>
+    </AnimatedContent>
     </div>
+
   );
   /* eslint-enable */
 }

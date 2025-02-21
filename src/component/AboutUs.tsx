@@ -1,15 +1,18 @@
 "use client";
+import AnimatedContent from "@/components/AnimationContent";
 import React from "react";
 
 export function AboutUs() {
   return (
-    <>
+    <AnimatedContent direction="horizontal">
+
       <div className="flex flex-col items-center justify-center p-4">
         <h1 className="bg-gradient-to-br mb-0 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
           About Us
         </h1>
         <hr  className="w-[10%] mx-auto my-0  border-2 border-blue-500"/>
         <div className="">
+
           <h1 className="text-blue-500 text-2xl font-bold">I am Saim Ramzan</h1>
           <p className="">
             I am a passionate and dedicated Frontend Developer with over 2 years
@@ -48,6 +51,6 @@ export function AboutUs() {
           </a>
         </div>
       </div>
-    </>
+    </AnimatedContent>
   );
 }
