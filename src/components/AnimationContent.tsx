@@ -1,87 +1,60 @@
 "use client";
-import { useRef, useEffect, useState } from "react";
-import { useSpring, animated } from "@react-spring/web";
+import { useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "framer-motion";
 
 interface Props {
   children: React.ReactNode;
   distance?: number;
   direction?: "vertical" | "horizontal";
   reverse?: boolean;
-  config?: {
-    tension: number;
-    friction: number;
-  };
   initialOpacity?: number;
   animateOpacity?: boolean;
   scale?: number;
-  threshold?: number;
+  threshold?: number | "some" | "all";
   delay?: number;
 }
+
 
 const AnimatedContent = ({
   children,
   distance = 100,
   direction = "vertical",
   reverse = false,
-  config = { tension: 50, friction: 25 },
   initialOpacity = 0,
   animateOpacity = true,
   scale = 1,
   threshold = 0.1,
   delay = 0,
 }: Props) => {
-  const [inView, setInView] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref, { amount: threshold });
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: direction === "vertical" ? 0 : undefined,
+        x: direction === "horizontal" ? 0 : undefined,
+        scale: 1,
+        transition: { delay: delay / 1000 }, // ms to seconds
+      });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView]);
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          observer.unobserve(ref.current!);
-          timeoutRef.current = setTimeout(() => {
-            setInView(true);
-          }, delay);
-        }
-      },
-      { threshold },
-    );
-
-    observer.observe(ref.current);
-
-    return () => {
-      observer.disconnect();
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [threshold, delay]);
-
-  const directions = {
-    vertical: "Y",
-    horizontal: "X",
+  const initial = {
+    opacity: animateOpacity ? initialOpacity : 1,
+    y: direction === "vertical" ? (reverse ? -distance : distance) : 0,
+    x: direction === "horizontal" ? (reverse ? -distance : distance) : 0,
+    scale,
   };
 
-  const springProps = useSpring({
-    from: inView
-      ? {}
-      : {
-          transform: `translate${directions[direction]}(${reverse ? `-${distance}px` : `${distance}px`}) scale(${scale})`,
-          opacity: animateOpacity ? initialOpacity : 1,
-        },
-    to: inView
-      ? {
-          transform: `translate${directions[direction]}(0px) scale(1)`,
-          opacity: 1,
-        }
-      : undefined,
-    config,
-  });
-
   return (
-    <animated.div ref={ref} style={springProps}>
+    <motion.div ref={ref} initial={initial} animate={controls}>
       {children}
-    </animated.div>
+    </motion.div>
   );
 };
 
