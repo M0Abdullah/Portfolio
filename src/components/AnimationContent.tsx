@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect, useState, forwardRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 
 interface Props {
@@ -46,7 +46,7 @@ const AnimatedContent = ({
           }, delay);
         }
       },
-      { threshold }
+      { threshold },
     );
 
     observer.observe(ref.current);
@@ -66,9 +66,7 @@ const AnimatedContent = ({
     from: inView
       ? {}
       : {
-          transform: `translate${directions[direction]}(${
-            reverse ? `-${distance}px` : `${distance}px`
-          }) scale(${scale})`,
+          transform: `translate${directions[direction]}(${reverse ? `-${distance}px` : `${distance}px`}) scale(${scale})`,
           opacity: animateOpacity ? initialOpacity : 1,
         },
     to: inView
@@ -80,18 +78,10 @@ const AnimatedContent = ({
     config,
   });
 
-  // 👇 Here's the fix — cast to animated.div with forwardRef
-  const AnimatedDiv = animated(
-    // eslint-disable-next-line react/display-name
-    forwardRef<HTMLDivElement, React.HTMLProps<HTMLDivElement>>(
-      (props, ref) => <div ref={ref} {...props} />
-    )
-  );
-
   return (
-    <AnimatedDiv ref={ref} style={springProps}>
+    <animated.div ref={ref} style={springProps}>
       {children}
-    </AnimatedDiv>
+    </animated.div>
   );
 };
 
