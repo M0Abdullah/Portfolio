@@ -9,16 +9,16 @@ import Stats from "@/component/Stats";
 export default function Home() {
   return (
     <>
-    <div className="max-w-screen-xl mx-auto p-4">
-    <HeaderSide />
-  </div>
-  <div className="max-w-screen-xl mx-auto p-4">
-     <AboutUs />
-  </div>
-     <Stats />
-     <MySkills />
-     <AnimatedPinDemo />
-     <Form />
+      <div className="max-w-screen-xl mx-auto p-4">
+        <HeaderSide />
+      </div>
+      <div className="max-w-screen-xl mx-auto p-4">
+        <AboutUs />
+      </div>
+      <Stats />
+      <MySkills />
+      <AnimatedPinDemo />
+      <Form />
     </>
   );
 }

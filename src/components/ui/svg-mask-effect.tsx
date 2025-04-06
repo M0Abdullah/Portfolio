@@ -34,7 +34,7 @@ export const MaskContainer = ({
         // eslint-disable-next-line
         containerRef.current.removeEventListener(
           "mousemove",
-          updateMousePosition
+          updateMousePosition,
         );
       }
     };
@@ -46,9 +46,9 @@ export const MaskContainer = ({
     <motion.div
       ref={containerRef}
       className={cn("h-screen relative", className)}
-    //   animate={{
-    //     backgroundColor: isHovered ? "var(--slate-900)" : "var(--white)",
-    //   }}
+      //   animate={{
+      //     backgroundColor: isHovered ? "var(--slate-900)" : "var(--white)",
+      //   }}
     >
       <motion.div
         className="w-full h-full flex items-center justify-center text-6xl absolute bg-black bg-grid-white/[0.2] text-white [mask-image:url(/mask.svg)] [mask-size:40px] [mask-repeat:no-repeat]"

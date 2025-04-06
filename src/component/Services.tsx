@@ -8,7 +8,7 @@ export function AnimatedPinDemo() {
     {
       title: "Web Development",
       description:
-        "Building responsive, dynamic, and high-performance websites tailored to your needs. Using modern technologies like React, Node.js, and more, I ensure your site is optimized for speed, scalability, and accessibility, delivering a robust online presence.",
+        "Building responsive, dynamic, and high-performance websites tailored to your needs. Using modern technologies like React, Node.js, and Nest Js, I ensure your site is optimized for speed, scalability, and accessibility, delivering a robust online presence.",
     },
     {
       title: "Mobile App Development",
@@ -18,66 +18,64 @@ export function AnimatedPinDemo() {
   ];
   /* eslint-disable */
   return (
-    
     <div className="items-center py-4 ">
       <AnimatedContent direction="horizontal">
-      <h1 className="bg-gradient-to-br mb-0 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
-      Services
+        <h1 className="bg-gradient-to-br mb-0 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
+          Services
         </h1>
-        <hr  className="w-[5%] mx-auto my-0 sm:mb-3 border-2 border-blue-500"/>
-      <div className="w-full h-[60rem] sm:mt-4 md:h-[40rem] md:mt-10 gap-10 flex flex-col md:flex-row items-center justify-center ">
-        {data.map((item, id) => (
-          <BackgroundGradient
-            key={id}
-            className="rounded-[22px] md:h-96 max-w-sm p-4  sm:p-10 bg-zinc-900"
-          >
-            <h1 className="text-lg md:text-2xl sm:text-xl mt-4 mb-2 text-neutral-200">
-              {item.title}
-            </h1>
+        <hr className="w-[5%] mx-auto my-0 sm:mb-3 border-2 border-blue-500" />
+        <div className="w-full h-[60rem] sm:mt-4 md:h-[40rem] md:mt-10 gap-10 flex flex-col md:flex-row items-center justify-center ">
+          {data.map((item, id) => (
+            <BackgroundGradient
+              key={id}
+              className="rounded-[22px] md:h-96 max-w-sm p-4  sm:p-10 bg-zinc-900"
+            >
+              <h1 className="text-lg md:text-2xl sm:text-xl mt-4 mb-2 text-neutral-200">
+                {item.title}
+              </h1>
 
-            <h3 className="text-lg  text-neutral-400">
-              {item.description}
-            </h3>
-          </BackgroundGradient>
-        ))}
-      </div>
-    </AnimatedContent>
-    <AnimatedContent direction="vertical">
-      <div className="flex justify-center items-center">
-        <div className="bg-black text-white p-6 m-2  rounded-lg w-full max-w-lg font-mono">
-          <div className="flex justify-between items-center">
-            <div className="flex space-x-2 text-red-500">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              <h3 className="text-lg  text-neutral-400">{item.description}</h3>
+            </BackgroundGradient>
+          ))}
+        </div>
+      </AnimatedContent>
+      <AnimatedContent direction="vertical">
+        <div className="flex justify-center items-center">
+          <div className="bg-black text-white p-6 m-2  rounded-lg w-full max-w-lg font-mono">
+            <div className="flex justify-between items-center">
+              <div className="flex space-x-2 text-red-500">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <p className="text-sm">Bash</p>
             </div>
-            <p className="text-sm">Bash</p>
-          </div>
-          <div className="mt-4">
-            <p className="text-green-400">{`const developer = {`}</p>
-            <p className="text-white">
-              FirstName: <span className="text-green-400">"Saim",</span>{" "}
-            </p>
-            <p className="text-white">
-              LastName: <span className="text-green-400">"Ramzan",</span>{" "}
-            </p>
-            <p className="text-white">
-              age: <span className="text-green-400">19,</span>{" "}
-            </p>
-            <p className="text-white">{`Hobby:repeat = () => `} </p>
-            <p className="text-gray-400 -mt-5 ml-3">
-              <br /> {`//Eat()`},<br /> {`//Sleep()`},<br /> {`//code()`},{" "}
-              <br /> {`}`},
-            </p>
-            <p className="text-white">
-              <span className="text-green-400">{`}`},</span>{" "}
-            </p>
+            <div className="mt-4">
+              <p className="text-green-400">{`const developer = {`}</p>
+              <p className="text-white">
+                FirstName:{" "}
+                <span className="text-green-400">"Muhammad",</span>{" "}
+              </p>
+              <p className="text-white">
+                LastName:{" "}
+                <span className="text-green-400">"Abdullah",</span>{" "}
+              </p>
+              <p className="text-white">
+                age: <span className="text-green-400">19,</span>{" "}
+              </p>
+              <p className="text-white">{`Hobby:repeat = () => `} </p>
+              <p className="text-gray-400 -mt-5 ml-3">
+                <br /> {`//Eat()`},<br /> {`//Sleep()`},<br /> {`//code()`},{" "}
+                <br /> {`}`},
+              </p>
+              <p className="text-white">
+                <span className="text-green-400">{`}`},</span>{" "}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </AnimatedContent>
+      </AnimatedContent>
     </div>
-
   );
   /* eslint-enable */
 }

@@ -3,8 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-
-
 export const LampContainer = ({
   children,
   className,
@@ -16,7 +14,7 @@ export const LampContainer = ({
     <div
       className={cn(
         "relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md z-0",
-        className
+        className,
       )}
     >
       <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 ">
@@ -75,7 +73,6 @@ export const LampContainer = ({
           }}
           className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400 "
         ></motion.div>
-
       </div>
 
       <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">

@@ -23,7 +23,7 @@ export const InfiniteMovingCards = ({
 
   useEffect(() => {
     addAnimation();
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
   const [start, setStart] = useState(false);
   function addAnimation() {
@@ -47,12 +47,12 @@ export const InfiniteMovingCards = ({
       if (direction === "left") {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "forwards"
+          "forwards",
         );
       } else {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "reverse"
+          "reverse",
         );
       }
     }
@@ -73,7 +73,7 @@ export const InfiniteMovingCards = ({
       ref={containerRef}
       className={cn(
         "scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-        className
+        className,
       )}
     >
       <ul
@@ -81,12 +81,12 @@ export const InfiniteMovingCards = ({
         className={cn(
           " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
           start && "animate-scroll ",
-          pauseOnHover && "hover:[animation-play-state:paused]"
+          pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
-        {items.map((item,id) => (
+        {items.map((item, id) => (
           <li
-          key={id}
+            key={id}
             className="w-[200px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-3 pb-6 md:w-[200px]"
             style={{
               background:
