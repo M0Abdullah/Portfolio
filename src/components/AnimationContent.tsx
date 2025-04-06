@@ -15,7 +15,6 @@ interface Props {
   delay?: number;
 }
 
-
 const AnimatedContent = ({
   children,
   distance = 100,
@@ -38,8 +37,14 @@ const AnimatedContent = ({
         y: direction === "vertical" ? 0 : undefined,
         x: direction === "horizontal" ? 0 : undefined,
         scale: 1,
-        transition: { delay: delay / 1000 }, // ms to seconds
+        transition: {
+          delay: delay / 1000, 
+          duration: 1.2,     
+          ease: [0.25, 0.1, 0.25, 1], 
+        },
       });
+      
+      
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
