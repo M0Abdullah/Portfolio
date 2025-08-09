@@ -72,26 +72,20 @@ export default function Navigation() {
       <motion.header 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50 lg:hidden glass-effect border-b border-white/10"
+        className="fixed top-0 left-0 right-0 z-50 md:hidden glass-effect border-b border-white/10"
       >
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold gradient-text">Muhammad Abdullah</h1>
-          <a 
-            href="/saim-ramzan.pdf"
-            download
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-medium transition-colors"
-          >
-            Resume
-          </a>
+        <div className="container mx-auto px-4 py-3 sm:py-4 flex justify-between items-center">
+          <h1 className="text-lg sm:text-xl font-bold gradient-text">Muhammad Abdullah</h1>
+        
         </div>
       </motion.header>
 
       {/* Floating Dock Navigation */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50 px-4">
         <FloatingDock
           items={links}
           desktopClassName="bg-black/50 backdrop-blur-md border border-white/10"
-          mobileClassName="bg-black/50 backdrop-blur-md border border-white/10"
+          mobileClassName="bg-black/50 backdrop-blur-md border border-white/10 scale-90 sm:scale-100"
         />
       </div>
     </>
