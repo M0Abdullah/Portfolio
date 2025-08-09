@@ -44,7 +44,7 @@ function HeaderSide() {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
       {/* Spotlight Effects */}
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
       <Spotlight className="top-10 left-full h-[80vh] w-[50vw]" fill="blue" />
@@ -54,14 +54,14 @@ function HeaderSide() {
       <div className="absolute inset-0 bg-black bg-grid-white/[0.02] bg-grid-small-white/[0.02]" />
       <div className="absolute inset-0 bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-8 sm:pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Content Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-1"
           >
             {/* Greeting */}
             <motion.div
@@ -78,7 +78,7 @@ function HeaderSide() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold gradient-text leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold gradient-text leading-tight"
             >
               Muhammad
               <br />
@@ -86,7 +86,7 @@ function HeaderSide() {
             </motion.h1>
 
             {/* Typewriter Effect */}
-            <div className="text-xl md:text-2xl text-gray-300">
+            <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300">
               <TypewriterEffect words={words} />
             </div>
 
@@ -95,31 +95,20 @@ function HeaderSide() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-lg text-gray-400 leading-relaxed max-w-2xl"
+              className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               Passionate MERN Stack Developer specializing in building exceptional digital experiences. 
               I create scalable web applications and mobile solutions using modern technologies.
             </motion.p>
 
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 glow-effect hover:scale-105">
-                View My Work
-              </button>
-            
-            </motion.div>
+      
 
             {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.6 }}
-              className="flex gap-4"
+              className="flex gap-3 sm:gap-4 justify-center lg:justify-start"
             >
               {socialLinks.map((social, index) => (
                 <a
@@ -127,10 +116,10 @@ function HeaderSide() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 glass-effect rounded-lg hover:bg-blue-600/20 transition-all duration-300 hover:scale-110"
+                  className="p-2 sm:p-3 glass-effect rounded-lg hover:bg-blue-600/20 transition-all duration-300 hover:scale-110"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5 text-gray-300" />
+                  <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-300" />
                 </a>
               ))}
             </motion.div>
@@ -141,21 +130,21 @@ function HeaderSide() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-center order-1 lg:order-2 mb-6 lg:mb-0"
           >
             <div className="relative">
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-3xl scale-110" />
               
               {/* Profile Image */}
-              <div className="relative glass-effect p-2 rounded-3xl animate-float">
+              <div className="relative glass-effect p-2 rounded-2xl sm:rounded-3xl animate-float">
                 <Image
                   src={abdullahImage}
-                  width={400}
-                  height={400}
+                  width={300}
+                  height={300}
                   alt="Muhammad Abdullah - Full Stack Developer"
                   priority
-                  className="rounded-2xl object-cover w-full h-full"
+                  className="rounded-xl sm:rounded-2xl object-cover w-full h-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] mx-auto"
                 />
               </div>
 
@@ -163,17 +152,17 @@ function HeaderSide() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute -top-4 -right-4 w-16 h-16 glass-effect rounded-full flex items-center justify-center"
+                className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 glass-effect rounded-full flex items-center justify-center"
               >
-                <span className="text-2xl">⚡</span>
+                <span className="text-lg sm:text-2xl">⚡</span>
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 w-16 h-16 glass-effect rounded-full flex items-center justify-center"
+                className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-12 h-12 sm:w-16 sm:h-16 glass-effect rounded-full flex items-center justify-center"
               >
-                <span className="text-2xl">🚀</span>
+                <span className="text-lg sm:text-2xl">🚀</span>
               </motion.div>
             </div>
           </motion.div>
@@ -184,9 +173,9 @@ function HeaderSide() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-16"
+          className="mt-8 sm:mt-12 lg:mt-16"
         >
-          <p className="text-center text-gray-400 mb-8 text-lg">Technologies I work with</p>
+          <p className="text-center text-gray-400 mb-4 sm:mb-6 lg:mb-8 text-sm sm:text-base lg:text-lg">Technologies I work with</p>
           <InfiniteMovingCards items={techStack} direction="right" speed="slow" />
         </motion.div>
       </div>
