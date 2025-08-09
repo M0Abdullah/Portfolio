@@ -1,61 +1,203 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import analysis from "@/Assest/analysis.svg";
-import Image from "next/image";
-import AnimatedContent from "@/components/AnimationContent";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { 
+  IconBrandReact, 
+  IconBrandNextjs, 
+  IconBrandNodejs, 
+  IconBrandTypescript,
+  IconBrandMongodb,
+  IconBrandDocker,
+  IconBrandAws,
+  IconBrandGit,
+  IconBrandTailwind,
+  IconBrandJavascript,
+  IconDatabase,
+  IconApi,
+  IconBrandFirebase
+} from "@tabler/icons-react";
 
 function MySkills() {
-  const progressData = [
-    { title: "Html", progress: 90, color: "#ec7518" },
-    { title: "Css", progress: 90, color: "#18b2ec" },
-    { title: "JavaScript", progress: 90, color: "#f0dc55" },
-    { title: "TypeScript", progress: 80, color: "#f0dc55" },
-    { title: "React JS", progress: 90, color: "#83e6ff" },
-    { title: "React Native", progress: 90, color: "#83e6ff" },
-    { title: "Next JS", progress: 80, color: "#2974c9" },
-    { title: "Node Js", progress: 60, color: "#2974c9" },
-    { title: "Backend Framework NestJs", progress: 70, color: "#2974c9" },
+  const [activeCategory, setActiveCategory] = useState("frontend");
+
+  const skillCategories = {
+    frontend: {
+      title: "Frontend Development",
+      skills: [
+        { name: "React.js", level: 95, icon: IconBrandReact, color: "#61DAFB", experience: "3+ years" },
+        { name: "Next.js", level: 90, icon: IconBrandNextjs, color: "#000000", experience: "2+ years" },
+        { name: "TypeScript", level: 85, icon: IconBrandTypescript, color: "#3178C6", experience: "2+ years" },
+        { name: "JavaScript", level: 95, icon: IconBrandJavascript, color: "#F7DF1E", experience: "3+ years" },
+        { name: "React Native", level: 88, icon: IconBrandReact, color: "#61DAFB", experience: "2+ years" },
+        { name: "Tailwind CSS", level: 92, icon: IconBrandTailwind, color: "#06B6D4", experience: "2+ years" },
+      ]
+    },
+    backend: {
+      title: "Backend Development",
+      skills: [
+        { name: "Node.js", level: 85, icon: IconBrandNodejs, color: "#339933", experience: "3+ years" },
+        { name: "Nest.js", level: 80, icon: IconBrandNodejs, color: "#E0234E", experience: "2+ years" },
+        { name: "MongoDB", level: 85, icon: IconBrandMongodb, color: "#47A248", experience: "2+ years" },
+        { name: "MySQL", level: 75, icon: IconDatabase, color: "#336791", experience: "1+ years" },
+        { name: "Firebase", level: 80, icon: IconBrandFirebase, color: "#336791", experience: "1+ years" },
+      ]
+    },
+    tools: {
+      title: "Tools & Technologies",
+      skills: [
+        { name: "Git", level: 90, icon: IconBrandGit, color: "#F05032", experience: "3+ years" },
+        { name: "Docker", level: 75, icon: IconBrandDocker, color: "#2496ED", experience: "1+ years" },
+        { name: "AWS", level: 70, icon: IconBrandAws, color: "#FF9900", experience: "1+ years" },
+        { name: "Jest", level: 80, icon: IconApi, color: "#C21325", experience: "2+ years" },
+        { name: "Webpack", level: 75, icon: IconApi, color: "#8DD6F9", experience: "2+ years" },
+      ]
+    }
+  };
+
+  const categories = [
+    { key: "frontend", label: "Frontend", icon: "🎨" },
+    { key: "backend", label: "Backend", icon: "⚙️" },
+    { key: "tools", label: "Tools", icon: "🛠️" },
   ];
-  /* eslint-disable */
 
   return (
-    <AnimatedContent>
-      <div className="flex flex-col items-center justify-center px-4 py-4 md:px-8">
-        <h1 className="bg-gradient-to-br mb-0 from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-medium tracking-tight text-transparent">
-          Skills
-        </h1>
-        <hr className="w-[3%] mx-auto my-0  border-2 border-blue-500" />
+    <section id="skills" className="py-24 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            Skills & Expertise
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-8" />
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Here are the technologies and tools I use to bring ideas to life
+          </p>
+        </motion.div>
 
-        <div className="flex flex-col md:flex-row items-center gap-11 md:gap-10 w-full max-w-4xl">
-          <Image src={analysis} width={300} height={300} alt="analysis" />
-          <div className="flex flex-col w-full">
-            {progressData.map((item, index) => {
-              const ref = useRef(null);
-              const isInView = useInView(ref, { once: true });
-              return (
-                <div key={index} className="w-full mb-4" ref={ref}>
-                  <div className="bg-gradient-to-br from-slate-300 to-slate-500 py-2 bg-clip-text font-medium tracking-tight text-transparent md:text-lg">
-                    {item.title}
+        {/* Category Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-12"
+        >
+          <div className="glass-effect rounded-2xl p-2 flex gap-2">
+            {categories.map((category) => (
+              <button
+                key={category.key}
+                onClick={() => setActiveCategory(category.key)}
+                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 ${
+                  activeCategory === category.key
+                    ? "bg-blue-600 text-white shadow-lg scale-105"
+                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                <span>{category.icon}</span>
+                {category.label}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Skills Grid */}
+        <motion.div
+          key={activeCategory}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="space-y-8"
+        >
+          <h3 className="text-2xl font-bold text-center text-white mb-8">
+            {skillCategories[activeCategory as keyof typeof skillCategories].title}
+          </h3>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skillCategories[activeCategory as keyof typeof skillCategories].skills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="glass-effect p-6 rounded-2xl hover:scale-105 transition-all duration-300 group"
+              >
+                {/* Skill Header */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <skill.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white">{skill.name}</h4>
+                      <p className="text-sm text-gray-400">{skill.experience}</p>
+                    </div>
                   </div>
-                  <div className="bg-white rounded-full h-2.5 dark:bg-gray-700 w-full">
+                  <span className="text-lg font-bold text-blue-400">{skill.level}%</span>
+                </div>
+
+                {/* Progress Bar */}
+                <div className="space-y-2">
+                  <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
                     <motion.div
-                      className="h-2.5 rounded-full"
-                      style={{ backgroundColor: item.color }}
-                      initial={{ width: "0%" }}
-                      animate={{ width: isInView ? `${item.progress}%` : "0%" }}
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
                       transition={{ duration: 1.5, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                      className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"
                     />
                   </div>
                 </div>
-              );
-            })}
+
+                {/* Skill Level Indicator */}
+                <div className="mt-3 flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <div
+                      key={i}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        i < Math.floor(skill.level / 20)
+                          ? "bg-blue-500 shadow-lg shadow-blue-500/50"
+                          : "bg-gray-600"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </div>
+        </motion.div>
+
+        {/* Additional Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <div className="glass-effect p-8 rounded-2xl max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Always Learning & Growing
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              I&apos;m constantly expanding my skill set and staying up-to-date with the latest technologies. 
+              Currently exploring <span className="text-blue-400 font-semibold">Microservices Architecture</span>, 
+              <span className="text-blue-400 font-semibold"> Kubernetes</span>, and 
+              <span className="text-blue-400 font-semibold"> Serverless Computing</span> to enhance my development capabilities.
+            </p>
+          </div>
+        </motion.div>
       </div>
-    </AnimatedContent>
+    </section>
   );
-  /* eslint-enable */
 }
 
 export default MySkills;
