@@ -89,21 +89,22 @@ function MySkills() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 sm:mb-12 px-4 overflow-x-auto"
         >
-          <div className="glass-effect rounded-2xl p-2 flex gap-2">
+          <div className="glass-effect rounded-xl sm:rounded-2xl p-1 sm:p-2 flex gap-1 sm:gap-2 min-w-max">
             {categories.map((category) => (
               <button
                 key={category.key}
                 onClick={() => setActiveCategory(category.key)}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 ${
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl text-sm sm:text-base font-semibold transition-all duration-300 flex items-center gap-1 sm:gap-2 whitespace-nowrap ${
                   activeCategory === category.key
                     ? "bg-blue-600 text-white shadow-lg scale-105"
                     : "text-gray-400 hover:text-white hover:bg-white/5"
                 }`}
               >
-                <span>{category.icon}</span>
-                {category.label}
+                <span className="text-lg sm:text-xl">{category.icon}</span>
+                <span className="hidden xs:inline">{category.label}</span>
+                <span className="xs:hidden">{category.label}</span>
               </button>
             ))}
           </div>
@@ -121,14 +122,14 @@ function MySkills() {
             {skillCategories[activeCategory as keyof typeof skillCategories].title}
           </h3>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {skillCategories[activeCategory as keyof typeof skillCategories].skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="glass-effect p-6 rounded-2xl hover:scale-105 transition-all duration-300 group"
+                className="glass-effect p-4 sm:p-6 rounded-xl sm:rounded-2xl hover:scale-105 transition-all duration-300 group"
               >
                 {/* Skill Header */}
                 <div className="flex items-center justify-between mb-4">
