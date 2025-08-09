@@ -130,7 +130,7 @@ export default function Form() {
   ];
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-12 md:py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent" />
       
@@ -141,29 +141,29 @@ export default function Form() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-4">
             Let&apos;s Work Together
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-8" />
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-6 md:mb-8" />
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
             Have a project in mind? I&apos;d love to hear from you. Let&apos;s discuss how we can bring your ideas to life.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-start">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 md:space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
-              <p className="text-gray-300 leading-relaxed mb-8">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Get in Touch</h3>
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-6 md:mb-8">
                 I&apos;m always open to discussing new opportunities, creative projects, or potential collaborations. 
                 Whether you have a question or just want to say hello, I&apos;ll do my best to get back to you!
               </p>
@@ -180,16 +180,16 @@ export default function Form() {
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02 }}
-                  className="glass-effect p-6 rounded-2xl flex items-center gap-4 hover:bg-blue-500/10 transition-all duration-300 group"
+                  className="glass-effect p-4 md:p-6 rounded-2xl flex items-center gap-3 md:gap-4 hover:bg-blue-500/10 transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <info.icon className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                    <info.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white group-hover:text-blue-400 transition-colors">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-sm md:text-base font-semibold text-white group-hover:text-blue-400 transition-colors">
                       {info.label}
                     </h4>
-                    <p className="text-gray-400">{info.value}</p>
+                    <p className="text-xs md:text-sm text-gray-400 truncate">{info.value}</p>
                   </div>
                 </motion.a>
               ))}
@@ -197,8 +197,8 @@ export default function Form() {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Connect with me</h4>
-              <div className="flex gap-4">
+              <h4 className="text-base md:text-lg font-semibold text-white mb-3 md:mb-4">Connect with me</h4>
+              <div className="flex gap-3 md:gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
@@ -210,10 +210,10 @@ export default function Form() {
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.1 }}
-                    className={`w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-white/10 transition-all duration-300 ${social.color}`}
+                    className={`w-10 h-10 md:w-12 md:h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-white/10 transition-all duration-300 ${social.color}`}
                     aria-label={social.label}
                   >
-                    <social.icon className="w-6 h-6" />
+                    <social.icon className="w-5 h-5 md:w-6 md:h-6" />
                   </motion.a>
                 ))}
               </div>
@@ -226,25 +226,25 @@ export default function Form() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="glass-effect p-8 rounded-2xl"
+            className="glass-effect p-4 md:p-6 lg:p-8 rounded-2xl"
           >
-            <h3 className="text-2xl font-bold text-white mb-8">Send me a message</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8">Send me a message</h3>
             
-            <form onSubmit={formik.handleSubmit} className="space-y-6">
+            <form onSubmit={formik.handleSubmit} className="space-y-4 md:space-y-6">
               {/* Name Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
                   Full Name *
                 </label>
                 <div className="relative">
-                  <IconUser className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <IconUser className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-400" />
                   <input
                     type="text"
                     name="name"
                     value={formik.values.name}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={`w-full pl-12 pr-4 py-3 glass-effect rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ${
+                    className={`w-full pl-10 md:pl-12 pr-4 py-2.5 md:py-3 glass-effect rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm md:text-base ${
                       formik.touched.name && formik.errors.name 
                         ? 'ring-2 ring-red-500' 
                         : ''
@@ -253,8 +253,8 @@ export default function Form() {
                   />
                 </div>
                 {formik.touched.name && formik.errors.name && (
-                  <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
-                    <IconX className="w-4 h-4" />
+                  <p className="mt-2 text-xs md:text-sm text-red-400 flex items-center gap-1">
+                    <IconX className="w-3 h-3 md:w-4 md:h-4" />
                     {formik.errors.name}
                   </p>
                 )}
@@ -262,18 +262,18 @@ export default function Form() {
 
               {/* Email Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
                   Email Address *
                 </label>
                 <div className="relative">
-                  <IconMail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <IconMail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-400" />
                   <input
                     type="email"
                     name="email"
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={`w-full pl-12 pr-4 py-3 glass-effect rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ${
+                    className={`w-full pl-10 md:pl-12 pr-4 py-2.5 md:py-3 glass-effect rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm md:text-base ${
                       formik.touched.email && formik.errors.email 
                         ? 'ring-2 ring-red-500' 
                         : ''
@@ -282,29 +282,29 @@ export default function Form() {
                   />
                 </div>
                 {formik.touched.email && formik.errors.email && (
-                  <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
-                    <IconX className="w-4 h-4" />
+                  <p className="mt-2 text-xs md:text-sm text-red-400 flex items-center gap-1">
+                    <IconX className="w-3 h-3 md:w-4 md:h-4" />
                     {formik.errors.email}
                   </p>
                 )}
               </div>
 
               {/* Phone and Company Row */}
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
                 {/* Phone Field */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
                     Phone Number *
                   </label>
                   <div className="relative">
-                    <IconPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <IconPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-400" />
                     <input
                       type="tel"
                       name="phone"
                       value={formik.values.phone}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className={`w-full pl-12 pr-4 py-3 glass-effect rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ${
+                      className={`w-full pl-10 md:pl-12 pr-4 py-2.5 md:py-3 glass-effect rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm md:text-base ${
                         formik.touched.phone && formik.errors.phone 
                           ? 'ring-2 ring-red-500' 
                           : ''
@@ -313,8 +313,8 @@ export default function Form() {
                     />
                   </div>
                   {formik.touched.phone && formik.errors.phone && (
-                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
-                      <IconX className="w-4 h-4" />
+                    <p className="mt-2 text-xs md:text-sm text-red-400 flex items-center gap-1">
+                      <IconX className="w-3 h-3 md:w-4 md:h-4" />
                       {formik.errors.phone}
                     </p>
                   )}
@@ -322,24 +322,24 @@ export default function Form() {
 
                 {/* Company Field */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
                     Company (Optional)
                   </label>
                   <div className="relative">
-                    <IconBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <IconBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-gray-400" />
                     <input
                       type="text"
                       name="company"
                       value={formik.values.company}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className="w-full pl-12 pr-4 py-3 glass-effect rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full pl-10 md:pl-12 pr-4 py-2.5 md:py-3 glass-effect rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm md:text-base"
                       placeholder="Enter your company name"
                     />
                   </div>
                   {formik.touched.company && formik.errors.company && (
-                    <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
-                      <IconX className="w-4 h-4" />
+                    <p className="mt-2 text-xs md:text-sm text-red-400 flex items-center gap-1">
+                      <IconX className="w-3 h-3 md:w-4 md:h-4" />
                       {formik.errors.company}
                     </p>
                   )}
@@ -348,16 +348,16 @@ export default function Form() {
 
               {/* Message Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-xs md:text-sm font-medium text-gray-300 mb-2">
                   Message *
                 </label>
                 <textarea
                   name="message"
-                  rows={5}
+                  rows={4}
                   value={formik.values.message}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  className={`w-full px-4 py-3 glass-effect rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none ${
+                  className={`w-full px-4 py-2.5 md:py-3 glass-effect rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-sm md:text-base ${
                     formik.touched.message && formik.errors.message 
                       ? 'ring-2 ring-red-500' 
                       : ''
@@ -365,8 +365,8 @@ export default function Form() {
                   placeholder="Tell me about your project or inquiry..."
                 />
                 {formik.touched.message && formik.errors.message && (
-                  <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
-                    <IconX className="w-4 h-4" />
+                  <p className="mt-2 text-xs md:text-sm text-red-400 flex items-center gap-1">
+                    <IconX className="w-3 h-3 md:w-4 md:h-4" />
                     {formik.errors.message}
                   </p>
                 )}
@@ -378,7 +378,7 @@ export default function Form() {
                 disabled={isSubmitting || !formik.isValid}
                 whileHover={{ scale: formik.isValid ? 1.02 : 1 }}
                 whileTap={{ scale: formik.isValid ? 0.98 : 1 }}
-                className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 ${
+                className={`w-full py-3 md:py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm md:text-base ${
                   submitStatus === 'success'
                     ? 'bg-green-600 text-white'
                     : submitStatus === 'error'
@@ -390,23 +390,27 @@ export default function Form() {
               >
                 {isSubmitting ? (
                   <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    Sending...
+                    <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span className="hidden xs:inline">Sending...</span>
+                    <span className="xs:hidden">Sending</span>
                   </>
                 ) : submitStatus === 'success' ? (
                   <>
-                    <IconCheck className="w-5 h-5" />
-                    Message Sent!
+                    <IconCheck className="w-4 h-4 md:w-5 md:h-5" />
+                    <span className="hidden xs:inline">Message Sent!</span>
+                    <span className="xs:hidden">Sent!</span>
                   </>
                 ) : submitStatus === 'error' ? (
                   <>
-                    <IconX className="w-5 h-5" />
-                    Failed to Send
+                    <IconX className="w-4 h-4 md:w-5 md:h-5" />
+                    <span className="hidden xs:inline">Failed to Send</span>
+                    <span className="xs:hidden">Failed</span>
                   </>
                 ) : (
                   <>
-                    <IconSend className="w-5 h-5" />
-                    Send Message
+                    <IconSend className="w-4 h-4 md:w-5 md:h-5" />
+                    <span className="hidden xs:inline">Send Message</span>
+                    <span className="xs:hidden">Send</span>
                   </>
                 )}
               </motion.button>
