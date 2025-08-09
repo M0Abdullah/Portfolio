@@ -1,23 +1,36 @@
-// import { LampDemo } from "@/component/AboutUs";
 import { AboutUs } from "@/component/AboutUs";
 import Form from "@/component/Form";
 import HeaderSide from "@/component/HeaderSide";
 import MySkills from "@/component/MySkills";
-import { AnimatedPinDemo } from "@/component/Services";
 import Stats from "@/component/Stats";
+import Experience from "@/component/Experience";
+import Projects from "@/component/Projects";
+import Navigation from "@/component/Navigation";
 
 export default function Home() {
   return (
     <>
-      <div className="max-w-screen-xl mx-auto p-4">
-        <HeaderSide />
-      </div>
-      <div className="max-w-screen-xl mx-auto p-4">
-        <AboutUs />
-      </div>
+      <Navigation />
+      
+      {/* Hero Section */}
+      <HeaderSide />
+      
+      {/* About Section */}
+      <AboutUs />
+      
+      {/* Stats Section */}
       <Stats />
+      
+      {/* Skills Section */}
       <MySkills />
-      <AnimatedPinDemo />
+      
+      {/* Experience Section */}
+      <Experience />
+      
+      {/* Projects Section */}
+      <Projects />
+      
+      {/* Contact Section */}
       <Form />
     </>
   );
