@@ -111,7 +111,7 @@ export default function Experience() {
           className="relative"
         >
           {/* Timeline Line */}
-          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-green-500 rounded-full" />
+          <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-green-500 rounded-full" />
 
           {/* Experience Items */}
           <div className="space-y-12">
@@ -119,36 +119,121 @@ export default function Experience() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } flex-col md:gap-16`}
+                className="relative"
               >
-                {/* Timeline Node */}
-                <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-black shadow-lg z-10" />
+                {/* Mobile Layout - Centered */}
+                <div className="md:hidden">
+                  {/* Timeline Node */}
+                  <div className="absolute left-4 top-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-black shadow-lg z-10" />
+                  
+                  {/* Content Card */}
+                  <div className="ml-12 mr-4">
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      className="glass-effect p-4 rounded-xl hover:shadow-2xl transition-all duration-300"
+                    >
+                      {/* Header */}
+                      <div className="mb-4">
+                        <h3 className="text-lg font-bold text-white mb-2">{exp.title}</h3>
+                        <div className="flex flex-wrap items-center gap-2 text-blue-400 font-semibold mb-2">
+                          <IconBriefcase className="w-4 h-4" />
+                          <span className="text-sm">{exp.company}</span>
+                          <a
+                            href={exp.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:scale-110 transition-transform"
+                          >
+                            <IconExternalLink className="w-3 h-3" />
+                          </a>
+                        </div>
+                        <div className="flex flex-wrap gap-2 text-xs text-gray-400">
+                          <div className="flex items-center gap-1">
+                            <IconCalendar className="w-3 h-3" />
+                            <span>{exp.period}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <IconMapPin className="w-3 h-3" />
+                            <span>{exp.location}</span>
+                          </div>
+                          <span className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded-full">
+                            {exp.duration}
+                          </span>
+                        </div>
+                      </div>
 
-                {/* Content Card */}
-                <div className={`w-full md:w-5/12 ml-16 md:ml-0 ${index % 2 === 0 ? "" : "md:text-right"}`}>
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="glass-effect p-8 rounded-2xl hover:shadow-2xl transition-all duration-300"
-                  >
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-6">
-                      <div className={`flex-1 ${index % 2 === 0 ? "" : "md:text-right"}`}>
-                        <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                        <div className="flex items-center gap-2 text-blue-400 font-semibold mb-2">
+                      {/* Description */}
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                        {exp.description}
+                      </p>
+
+                      {/* Key Achievements */}
+                      <div className="mb-4">
+                        <h4 className="text-sm font-semibold text-white mb-2">Key Achievements:</h4>
+                        <ul className="space-y-1">
+                          {exp.achievements.slice(0, 3).map((achievement, i) => (
+                            <li key={i} className="flex items-start gap-2 text-gray-300 text-xs">
+                              <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-1 flex-shrink-0" />
+                              <span>{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Technologies */}
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-2">Technologies:</h4>
+                        <div className="flex flex-wrap gap-1">
+                          {exp.technologies.slice(0, 5).map((tech, i) => (
+                            <span
+                              key={i}
+                              className="px-2 py-1 glass-effect text-xs text-gray-300 rounded border border-blue-500/20"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+
+                {/* Desktop Layout - Alternating */}
+                <div className="hidden md:flex items-center gap-16" style={{
+                  flexDirection: index % 2 === 0 ? 'row' : 'row-reverse'
+                }}>
+                  {/* Timeline Node */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-black shadow-lg z-10" />
+
+                  {/* Content Card */}
+                  <div className="w-5/12">
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      className="glass-effect p-6 lg:p-8 rounded-2xl hover:shadow-2xl transition-all duration-300"
+                      style={{
+                        textAlign: index % 2 === 0 ? 'left' : 'right'
+                      }}
+                    >
+                      {/* Header */}
+                      <div className="mb-6">
+                        <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">{exp.title}</h3>
+                        <div className={`flex items-center gap-2 text-blue-400 font-semibold mb-2 ${
+                          index % 2 === 0 ? 'justify-start' : 'justify-end'
+                        }`}>
                           <IconBriefcase className="w-5 h-5" />
                           <span>{exp.company}</span>
                           <a
                             href={exp.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="ml-2 hover:scale-110 transition-transform"
+                            className="hover:scale-110 transition-transform"
                           >
                             <IconExternalLink className="w-4 h-4" />
                           </a>
                         </div>
-                        <div className="flex flex-wrap gap-4 text-sm text-gray-400">
+                        <div className={`flex flex-wrap gap-4 text-sm text-gray-400 ${
+                          index % 2 === 0 ? 'justify-start' : 'justify-end'
+                        }`}>
                           <div className="flex items-center gap-1">
                             <IconCalendar className="w-4 h-4" />
                             <span>{exp.period}</span>
@@ -162,45 +247,49 @@ export default function Experience() {
                           </span>
                         </div>
                       </div>
-                    </div>
 
-                    {/* Description */}
-                    <p className="text-gray-300 leading-relaxed mb-6">
-                      {exp.description}
-                    </p>
+                      {/* Description */}
+                      <p className="text-gray-300 leading-relaxed mb-6">
+                        {exp.description}
+                      </p>
 
-                    {/* Key Achievements */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-3">Key Achievements:</h4>
-                      <ul className="space-y-2">
-                        {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start gap-2 text-gray-300">
-                            <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Technologies */}
-                    <div>
-                      <h4 className="text-lg font-semibold text-white mb-3">Technologies Used:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="px-3 py-1 glass-effect text-sm text-gray-300 rounded-lg border border-blue-500/20"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                      {/* Key Achievements */}
+                      <div className="mb-6">
+                        <h4 className="text-lg font-semibold text-white mb-3">Key Achievements:</h4>
+                        <ul className="space-y-2">
+                          {exp.achievements.map((achievement, i) => (
+                            <li key={i} className={`flex items-start gap-2 text-gray-300 ${
+                              index % 2 === 0 ? '' : 'flex-row-reverse text-right'
+                            }`}>
+                              <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
+                              <span>{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    </div>
-                  </motion.div>
-                </div>
 
-                {/* Empty space for alternating layout */}
-                <div className="hidden md:block w-5/12" />
+                      {/* Technologies */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-3">Technologies Used:</h4>
+                        <div className={`flex flex-wrap gap-2 ${
+                          index % 2 === 0 ? 'justify-start' : 'justify-end'
+                        }`}>
+                          {exp.technologies.map((tech, i) => (
+                            <span
+                              key={i}
+                              className="px-3 py-1 glass-effect text-sm text-gray-300 rounded-lg border border-blue-500/20"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  {/* Empty space for alternating layout */}
+                  <div className="w-5/12" />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -212,7 +301,7 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-20 grid md:grid-cols-4 gap-6"
+          className="mt-16 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
         >
           {[
             { label: "Years of Experience", value: "3+", icon: "🚀" },
@@ -223,7 +312,7 @@ export default function Experience() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="glass-effect p-6 rounded-2xl text-center"
+              className="glass-effect p-4 sm:p-6 rounded-xl sm:rounded-2xl text-center"
             >
               <div className="text-3xl mb-2">{stat.icon}</div>
               <div className="text-3xl font-bold gradient-text mb-2">{stat.value}</div>
