@@ -42,8 +42,8 @@ export default function Experience() {
       title: "Junior Frontend Developer",
       company: "Enigmatix",
       location: "Bwp, Pakistan",
-      period: "2022 - present",
-      duration: "2+ years",
+      period: "2022 - 2023",
+      duration: "1 years",
       type: "Full-time",
       description: "Started my professional journey building interactive user interfaces and learning modern development practices. Focused on React.js and modern JavaScript.",
       achievements: [
