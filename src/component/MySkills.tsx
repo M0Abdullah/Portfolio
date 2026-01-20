@@ -24,10 +24,10 @@ function MySkills() {
     frontend: {
       title: "Frontend Development",
       skills: [
-        { name: "React.js", level: 95, icon: IconBrandReact, color: "#61DAFB", experience: "3+ years" },
+        { name: "React.js", level: 95, icon: IconBrandReact, color: "#61DAFB", experience: "5+ years" },
         { name: "Next.js", level: 90, icon: IconBrandNextjs, color: "#000000", experience: "2+ years" },
         { name: "TypeScript", level: 85, icon: IconBrandTypescript, color: "#3178C6", experience: "2+ years" },
-        { name: "JavaScript", level: 95, icon: IconBrandJavascript, color: "#F7DF1E", experience: "3+ years" },
+        { name: "JavaScript", level: 95, icon: IconBrandJavascript, color: "#F7DF1E", experience: "5+ years" },
         { name: "React Native", level: 88, icon: IconBrandReact, color: "#61DAFB", experience: "2+ years" },
         { name: "Tailwind CSS", level: 92, icon: IconBrandTailwind, color: "#06B6D4", experience: "2+ years" },
       ]
@@ -35,7 +35,7 @@ function MySkills() {
     backend: {
       title: "Backend Development",
       skills: [
-        { name: "Node.js", level: 85, icon: IconBrandNodejs, color: "#339933", experience: "3+ years" },
+        { name: "Node.js", level: 85, icon: IconBrandNodejs, color: "#339933", experience: "5+ years" },
         { name: "Nest.js", level: 80, icon: IconBrandNodejs, color: "#E0234E", experience: "2+ years" },
         { name: "MongoDB", level: 85, icon: IconBrandMongodb, color: "#47A248", experience: "2+ years" },
         { name: "MySQL", level: 75, icon: IconDatabase, color: "#336791", experience: "1+ years" },
@@ -45,7 +45,7 @@ function MySkills() {
     tools: {
       title: "Tools & Technologies",
       skills: [
-        { name: "Git", level: 90, icon: IconBrandGit, color: "#F05032", experience: "3+ years" },
+        { name: "Git", level: 90, icon: IconBrandGit, color: "#F05032", experience: "5+ years" },
         { name: "Docker", level: 75, icon: IconBrandDocker, color: "#2496ED", experience: "1+ years" },
         { name: "AWS", level: 70, icon: IconBrandAws, color: "#FF9900", experience: "1+ years" },
         { name: "Jest", level: 80, icon: IconApi, color: "#C21325", experience: "2+ years" },

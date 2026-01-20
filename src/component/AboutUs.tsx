@@ -12,7 +12,7 @@ export function AboutUs() {
     },
     {
       icon: IconRocket,
-      title: "3+",
+      title: "5+",
       subtitle: "Years Experience",
       description: "Professional development experience"
     },
@@ -79,7 +79,7 @@ export function AboutUs() {
               
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
-                  I&apos;m a passionate Full-Stack Developer with <strong className="text-blue-400">3+ years</strong> of 
+                  I&apos;m a passionate Full-Stack Developer with <strong className="text-blue-400">5+ years</strong> of 
                   professional experience in building scalable web applications and mobile solutions. 
                   My expertise spans across the entire development lifecycle, from concept to deployment.
                 </p>

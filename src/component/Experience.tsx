@@ -98,7 +98,7 @@ export default function Experience() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-8" />
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            3+ years of professional experience building scalable applications and leading development teams
+            5+ years of professional experience building scalable applications and leading development teams
           </p>
         </motion.div>
 
@@ -304,7 +304,7 @@ export default function Experience() {
           className="mt-16 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
         >
           {[
-            { label: "Years of Experience", value: "3+", icon: "🚀" },
+            { label: "Years of Experience", value: "5+", icon: "🚀" },
             { label: "Projects Completed", value: "50+", icon: "💼" },
             { label: "Technologies Mastered", value: "15+", icon: "⚡" },
             { label: "Happy Clients", value: "25+", icon: "😊" },

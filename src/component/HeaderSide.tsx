@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import abdullahImage from "../Assest/abdullah.jpg";
+import abdullahImage from "../Assest/abdullah.png";
 import Image from "next/image";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
@@ -32,7 +32,7 @@ function HeaderSide() {
     { text: "Stack" },
     { text: "Developer" },
     { text: "with" },
-    { text: "3+" },
+    { text: "5+" },
     { text: "Years", className: "text-blue-500" },
     { text: "Experience", className: "text-blue-500" },
   ];
